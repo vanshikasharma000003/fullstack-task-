@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Quiz Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">JAVASCRIPT CHALLENGE</p>
+        <h1>JS Quiz Arena <span>⚡</span></h1>
+        <p class="subtitle">Test your knowledge, one question at a time.</p>
+      </div>
+      <div class="score-card">
+        <span class="muted">LIVE SCORE</span>
+        <strong id="liveScore">0</strong>
+      </div>
+    </header>
+
+    <section id="quizScreen" class="panel">
+      <div class="quiz-meta">
+        <span id="questionCount">Question 1/5</span>
+        <span class="timer"><span class="timer-dot"></span><span id="timer">30</span>s left</span>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+
+      <h2 id="questionText">Question appears here</h2>
+      <div id="options" class="options"></div>
+
+      <div id="feedback" class="feedback hidden" aria-live="polite">
+        <strong id="feedbackTitle"></strong>
+        <p id="explanation"></p>
+      </div>
+
+      <div class="actions">
+        <button id="restartBtn" class="btn btn-secondary">↻ Restart</button>
+        <button id="nextBtn" class="btn btn-primary" disabled>Next question →</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="panel result hidden">
+      <div class="result-icon">🏆</div>
+      <p class="eyebrow">QUIZ COMPLETED</p>
+      <h2>Your final score</h2>
+      <p class="final-score"><span id="finalScore">0</span><small> / 5</small></p>
+      <p id="ratingMessage" class="rating-message"></p>
+      <div class="result-actions">
+        <button id="reviewBtn" class="btn btn-secondary">Review wrong answers</button>
+        <button id="playAgainBtn" class="btn btn-primary">Play again ↻</button>
+      </div>
+    </section>
+
+    <section id="reviewScreen" class="panel hidden">
+      <div class="review-header">
+        <div>
+          <p class="eyebrow">LEARN FROM YOUR MISTAKES</p>
+          <h2>Review wrong answers</h2>
+        </div>
+        <button id="backBtn" class="btn btn-secondary">Back to results</button>
+      </div>
+      <div id="reviewList"></div>
+      <p id="noMistakes" class="no-mistakes hidden">Amazing! You answered every question correctly. 🎉</p>
+    </section>
+
+    <footer>Built with HTML · CSS · JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
